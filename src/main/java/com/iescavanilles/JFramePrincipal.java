@@ -28,31 +28,179 @@ public class JFramePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        GrupoDeBotones = new javax.swing.ButtonGroup();
+        lblHolaMundo = new javax.swing.JLabel();
+        tbtnEncender = new javax.swing.JToggleButton();
+        cbPlayStation = new javax.swing.JCheckBox();
+        cbXbox = new javax.swing.JCheckBox();
+        cbWii = new javax.swing.JCheckBox();
+        rbtnFerrari = new javax.swing.JRadioButton();
+        rbtnMustang = new javax.swing.JRadioButton();
+        rbtnCamaro = new javax.swing.JRadioButton();
+        CambiarTexto = new javax.swing.JButton();
+        lblEncendido = new javax.swing.JLabel();
+        btnMostrarConsola = new javax.swing.JButton();
+        lblConsolaSel = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        lblCoche = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Hola Mundo con Swing");
+        lblHolaMundo.setText("Hola Mundo con Swing");
+
+        tbtnEncender.setText("Encender");
+        tbtnEncender.addActionListener(this::tbtnEncenderActionPerformed);
+
+        cbPlayStation.setText("PlayStation");
+        cbPlayStation.addActionListener(this::cbPlayStationActionPerformed);
+
+        cbXbox.setText("Xbox");
+
+        cbWii.setText("Wii");
+
+        GrupoDeBotones.add(rbtnFerrari);
+        rbtnFerrari.setText("Ferrari");
+        rbtnFerrari.addActionListener(this::rbtnFerrariActionPerformed);
+
+        GrupoDeBotones.add(rbtnMustang);
+        rbtnMustang.setText("Mustang");
+        rbtnMustang.addActionListener(this::rbtnMustangActionPerformed);
+
+        GrupoDeBotones.add(rbtnCamaro);
+        rbtnCamaro.setText("Camaro");
+
+        CambiarTexto.setText("CambiarTexto");
+        CambiarTexto.addActionListener(this::CambiarTextoActionPerformed);
+
+        lblEncendido.setText(tbtnEncender.getText());
+
+        btnMostrarConsola.setText("Mostrar");
+        btnMostrarConsola.addActionListener(this::btnMostrarConsolaActionPerformed);
+
+        lblConsolaSel.setText("Selecciona una consola");
+        lblConsolaSel.setToolTipText("Selecciona una consola");
+
+        jButton1.setText("Selecciona un coche");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
+        lblCoche.setText("Selecciona un coche");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(jLabel1)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbPlayStation)
+                            .addComponent(cbXbox)
+                            .addComponent(cbWii, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnMostrarConsola)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblConsolaSel, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbtnCamaro)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(lblEncendido, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(tbtnEncender, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(47, 47, 47))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jButton1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(lblCoche, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap()))
+                            .addComponent(rbtnMustang)
+                            .addComponent(rbtnFerrari)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblHolaMundo)
+                        .addGap(18, 18, 18)
+                        .addComponent(CambiarTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addComponent(jLabel1)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblHolaMundo)
+                    .addComponent(CambiarTexto)
+                    .addComponent(lblEncendido)
+                    .addComponent(tbtnEncender))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbPlayStation)
+                    .addComponent(rbtnFerrari))
+                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbXbox)
+                    .addComponent(rbtnMustang))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbWii)
+                    .addComponent(rbtnCamaro))
+                .addGap(7, 7, 7)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(btnMostrarConsola)
+                    .addComponent(lblCoche)
+                    .addComponent(lblConsolaSel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tbtnEncenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbtnEncenderActionPerformed
+        if(tbtnEncender.isSelected()){
+            lblEncendido.setText("Encendido");
+            tbtnEncender.setText("Apagar");
+        }else{
+            lblEncendido.setText("Apagado");
+            tbtnEncender.setText("Encender");
+        }
+    }//GEN-LAST:event_tbtnEncenderActionPerformed
+
+    private void cbPlayStationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPlayStationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbPlayStationActionPerformed
+
+    private void rbtnFerrariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnFerrariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtnFerrariActionPerformed
+
+    private void CambiarTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CambiarTextoActionPerformed
+        lblHolaMundo.setText("HolaHolaHolaHolaHolaHola");
+    }//GEN-LAST:event_CambiarTextoActionPerformed
+
+    private void btnMostrarConsolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarConsolaActionPerformed
+        if(cbPlayStation.isSelected()){
+            lblConsolaSel.setText("Consola seleccionada: " + cbPlayStation.getText());
+        }else if(cbXbox.isSelected()){
+            lblConsolaSel.setText("Consola seleccionada: " + cbXbox.getText());
+        }else if(cbWii.isSelected()){
+            lblConsolaSel.setText("Consola seleccionada: " + cbWii.getText());
+        }
+    }//GEN-LAST:event_btnMostrarConsolaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if(rbtnFerrari.isSelected()){
+            lblCoche.setText("Coche Seleccionado: " + rbtnFerrari.getText());
+        }else if(rbtnMustang.isSelected()){
+            lblCoche.setText("Coche seleccionada: " + rbtnMustang.getText());
+        }else if(cbWii.isSelected()){
+            lblCoche.setText("Consola seleccionada: " + rbtnCamaro.getText());
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void rbtnMustangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnMustangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtnMustangActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,6 +228,20 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton CambiarTexto;
+    private javax.swing.ButtonGroup GrupoDeBotones;
+    private javax.swing.JButton btnMostrarConsola;
+    private javax.swing.JCheckBox cbPlayStation;
+    private javax.swing.JCheckBox cbWii;
+    private javax.swing.JCheckBox cbXbox;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel lblCoche;
+    private javax.swing.JLabel lblConsolaSel;
+    private javax.swing.JLabel lblEncendido;
+    private javax.swing.JLabel lblHolaMundo;
+    private javax.swing.JRadioButton rbtnCamaro;
+    private javax.swing.JRadioButton rbtnFerrari;
+    private javax.swing.JRadioButton rbtnMustang;
+    private javax.swing.JToggleButton tbtnEncender;
     // End of variables declaration//GEN-END:variables
 }
