@@ -43,6 +43,13 @@ public class JFramePrincipal extends javax.swing.JFrame {
         lblConsolaSel = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         lblCoche = new javax.swing.JLabel();
+        comboxCoches = new javax.swing.JComboBox<>();
+        btnComBoxCoche = new javax.swing.JButton();
+        lblComBoxCoche = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        tfNombre = new javax.swing.JTextField();
+        lblConsultaNombre = new javax.swing.JLabel();
+        btnConsultaNombre = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,17 +87,34 @@ public class JFramePrincipal extends javax.swing.JFrame {
         lblConsolaSel.setText("Selecciona una consola");
         lblConsolaSel.setToolTipText("Selecciona una consola");
 
-        jButton1.setText("Selecciona un coche");
+        jButton1.setText("Mostrar");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
         lblCoche.setText("Selecciona un coche");
+
+        comboxCoches.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ferrari", "Ford", "Mustang", "BMW" }));
+        comboxCoches.addActionListener(this::comboxCochesActionPerformed);
+
+        btnComBoxCoche.setText("Mostrar");
+        btnComBoxCoche.addActionListener(this::btnComBoxCocheActionPerformed);
+
+        lblComBoxCoche.setText("Selecciona un coche");
+
+        lblNombre.setText("Nombre:");
+
+        tfNombre.addActionListener(this::tfNombreActionPerformed);
+
+        lblConsultaNombre.setText("Tu nombre es:");
+
+        btnConsultaNombre.setText("Consulta");
+        btnConsultaNombre.addActionListener(this::btnConsultaNombreActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,27 +124,42 @@ public class JFramePrincipal extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnMostrarConsola)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblConsolaSel, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                                .addComponent(lblConsolaSel, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblHolaMundo)
+                                .addGap(18, 18, 18)
+                                .addComponent(CambiarTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rbtnCamaro)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(lblEncendido, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(tbtnEncender, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(47, 47, 47))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jButton1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(lblCoche, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap()))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblEncendido, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(tbtnEncender, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblCoche, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(rbtnMustang)
                             .addComponent(rbtnFerrari)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblHolaMundo)
+                        .addComponent(comboxCoches, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(CambiarTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(btnComBoxCoche)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblComBoxCoche, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(39, 39, 39))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblConsultaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnConsultaNombre)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +188,19 @@ public class JFramePrincipal extends javax.swing.JFrame {
                     .addComponent(btnMostrarConsola)
                     .addComponent(lblCoche)
                     .addComponent(lblConsolaSel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboxCoches, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnComBoxCoche)
+                    .addComponent(lblComBoxCoche))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombre)
+                    .addComponent(tfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConsultaNombre))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblConsultaNombre)
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         pack();
@@ -202,6 +253,32 @@ public class JFramePrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtnMustangActionPerformed
 
+    private void comboxCochesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxCochesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboxCochesActionPerformed
+
+    private void btnComBoxCocheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComBoxCocheActionPerformed
+        // TODO add your handling code here:
+        
+        String coche;
+        int selectedItem;
+        
+        selectedItem = comboxCoches.getSelectedIndex();
+        coche = comboxCoches.getItemAt(selectedItem);
+        
+        lblComBoxCoche.setText("Coche seleccionado: " + coche);
+    }//GEN-LAST:event_btnComBoxCocheActionPerformed
+
+    private void tfNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNombreActionPerformed
+
+    private void btnConsultaNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaNombreActionPerformed
+        // TODO add your handling code here:
+        String nombre = tfNombre.getText();
+        lblNombre.setText("Tu nombre es: " + nombre);
+    }//GEN-LAST:event_btnConsultaNombreActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -230,18 +307,25 @@ public class JFramePrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CambiarTexto;
     private javax.swing.ButtonGroup GrupoDeBotones;
+    private javax.swing.JButton btnComBoxCoche;
+    private javax.swing.JButton btnConsultaNombre;
     private javax.swing.JButton btnMostrarConsola;
     private javax.swing.JCheckBox cbPlayStation;
     private javax.swing.JCheckBox cbWii;
     private javax.swing.JCheckBox cbXbox;
+    private javax.swing.JComboBox<String> comboxCoches;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel lblCoche;
+    private javax.swing.JLabel lblComBoxCoche;
     private javax.swing.JLabel lblConsolaSel;
+    private javax.swing.JLabel lblConsultaNombre;
     private javax.swing.JLabel lblEncendido;
     private javax.swing.JLabel lblHolaMundo;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JRadioButton rbtnCamaro;
     private javax.swing.JRadioButton rbtnFerrari;
     private javax.swing.JRadioButton rbtnMustang;
     private javax.swing.JToggleButton tbtnEncender;
+    private javax.swing.JTextField tfNombre;
     // End of variables declaration//GEN-END:variables
 }
